@@ -33,6 +33,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.myarsitektur.R
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormSiswa(
@@ -102,6 +103,14 @@ fun FormSiswa(
                 label = { Text(text = "Alamat Lengkap") },
                 onValueChange = { txtAlamat = it }
             )
+            Spacer(modifier = Modifier.height(20.dp))
+            Button(
+                modifier = Modifier.fillMaxWidth(1f),
+                enabled = txtAlamat.isNotEmpty(),
+                onClick = { onSubmitButtonClicked(listData) }
+            ) {
+                Text(stringResource(R.string.submit))
+            }
         }
     }
 }
