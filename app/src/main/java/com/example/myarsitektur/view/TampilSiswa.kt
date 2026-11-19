@@ -23,6 +23,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.myarsitektur.R
 import com.example.myarsitektur.model.Siswa
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilSiswa(
@@ -58,6 +59,13 @@ fun TampilSiswa(
                         Text(text = item.second, fontWeight = FontWeight.Bold, fontSize = 16.sp)
                     }
                     HorizontalDivider(thickness = dimensionResource(R.dimen.thickness_divider))
+                }
+                Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onBackButtonClicked
+                ) {
+                    Text(stringResource(R.string.back))
                 }
             }
         }
