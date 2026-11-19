@@ -9,6 +9,7 @@ interface RepositoriSiswa {
     suspend fun insertSiswa(siswa: Siswa)
     fun getSiswaStream(id: Int): Flow<Siswa?>
     suspend fun deleteSiswa(siswa: Siswa)
+    suspend fun updateSiswa(siswa: Siswa)
 }
 
 class OfflineRepositoriSiswa(
@@ -18,4 +19,5 @@ class OfflineRepositoriSiswa(
     override suspend fun insertSiswa(siswa: Siswa) = siswaDao.insert(siswa)
     override fun getSiswaStream(id: Int): Flow<Siswa?> = TODO("Belum diimplementasi")
     override suspend fun deleteSiswa(siswa: Siswa): Unit = TODO("Belum diimplementasi")
+    override suspend fun updateSiswa(siswa: Siswa): Unit = TODO("Belum diimplementasi")
 }
