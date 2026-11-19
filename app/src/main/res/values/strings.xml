@@ -8,4 +8,6 @@
     <string name="alamat">Alamat</string>
     <string name="gender">Jenis Kelamin</string>
     <string name="detail">Data Siswa</string>
+    <string name="edit_siswa">Edit Siswa</string>
+    <string name="detail_siswa">Detail Siswa</string>
 </resources>
