@@ -30,7 +30,13 @@ fun TampilSiswa(
     onBackButtonClicked: () -> Unit
 ) {
     Scaffold(
-        modifier = Modifier
+        modifier = Modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(id = R.string.detail), color = Color.White) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.purple_500))
+            )
+        }
     ) { isiRuang ->
     }
 }
