@@ -16,6 +16,7 @@ import com.example.myarsitektur.model.DataJK.JenisK
 import com.example.myarsitektur.view.FormSiswa
 import com.example.myarsitektur.view.TampilSiswa
 import com.example.myarsitektur.viewmodel.SiswaViewModel
+
 enum class Navigasi {
     Formulir,
     Detail
@@ -48,9 +49,15 @@ fun SiswaApp(
             composable(route = Navigasi.Detail.name) {
                 TampilSiswa(
                     statusUiSiswa = uiState.value,
-                    onBackButtonClicked = { navController.popBackStack() }
+                    onBackButtonClicked = { cancelAndBackToFormulir(navController) }
                 )
             }
         }
     }
+}
+
+private fun cancelAndBackToFormulir(
+    navController: NavHostController
+) {
+    navController.popBackStack(Navigasi.Formulir.name, inclusive = false)
 }
