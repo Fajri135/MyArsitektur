@@ -41,7 +41,13 @@ fun FormSiswa(
     modifier: Modifier = Modifier
 ) {
     Scaffold(
-        modifier = modifier
+        modifier = modifier,
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(id = R.string.app_name), color = Color.White) },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(colorResource(id = R.color.purple_500))
+            )
+        }
     ) { isiRuang ->
     }
 }
